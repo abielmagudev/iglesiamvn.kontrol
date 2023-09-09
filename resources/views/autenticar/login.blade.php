@@ -24,11 +24,14 @@
                 </button>
                 @csrf
             </form>
-
-            @if( $errors->any() )
-            <p class="has-text-danger mt-3">Usuario y contraseña no coinciden</p>
-            @endif
         </div>
+
+        @if( $errors->any() )
+        <div class="notification is-danger">
+            <span>Usuario y contraseña no coinciden</span>
+        </div>
+        @endif
+        
     </div>
 </section>
 @endsection
