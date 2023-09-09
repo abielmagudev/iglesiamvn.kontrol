@@ -23,4 +23,4 @@ use Illuminate\Support\Facades\Route;
 //     Route::get('eventos/{numero_mes?}', [ApiEventoController::class, 'index'])->name('api.eventos.index');
 // });
 
-Route::get('eventos/{numero_mes?}', [ApiEventoController::class, 'index'])->name('api.eventos.index');
+Route::get('eventos/{anio}/{mes}', [ApiEventoController::class, 'index'])->name('api.eventos.index');
