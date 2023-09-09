@@ -1,4 +1,3 @@
-@if( $visitas->count() )
 <div class="box">
     <nav class="level">
         <div class="level-item has-text-centered">
@@ -21,4 +20,3 @@
         </div>
       </nav>
 </div>
-@endif
