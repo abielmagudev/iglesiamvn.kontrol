@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::middleware('cors')->group(function () {
-    Route::get('eventos/{numero_mes?}', [ApiEventoController::class, 'index'])->name('api.eventos.index');
-});
+// Route::middleware('cors')->group(function () {
+//     Route::get('eventos/{numero_mes?}', [ApiEventoController::class, 'index'])->name('api.eventos.index');
+// });
+
+Route::get('eventos/{numero_mes?}', [ApiEventoController::class, 'index'])->name('api.eventos.index');
