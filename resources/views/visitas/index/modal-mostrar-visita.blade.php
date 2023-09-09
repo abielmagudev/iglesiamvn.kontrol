@@ -9,17 +9,13 @@
     <template>
         <p class="title"></p>
         <p class="subtitle"></p>
-        <p class="m-0">
-            <small>Explicación de su llegada</small>
-        </p>
         <p>
+            <small class="is-block has-text-grey">- Explicación de su llegada</small>
             <em></em>
         </p>
         <br>
-        <p class="m-0">
-            <small>Respuestas al contactar</small>
-        </p>
         <p>
+            <small class="is-block has-text-grey">- Respuestas al contactar</small>
             <em></em>
         </p>
     </template>
