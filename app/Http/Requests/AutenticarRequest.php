@@ -38,10 +38,12 @@ class AutenticarRequest extends FormRequest
     }
 
     public function passedValidation()
-    {
+    { 
+        $field_name = filter_var($this->usuario, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
+
         $this->merge([
-            'name' => $this->usuario,
-            'password' => $this->contrasena,
+            $field_name => $this->usuario,
+            'password' => $this->contrasena
         ]);
     }
 }

@@ -18,7 +18,7 @@ class AutenticarController extends Controller
 
     public function attempt(AutenticarRequest $request)
     {
-        $credenciales = $request->only(['name', 'password']);
+        $credenciales = $request->has('email') ? $request->only(['email', 'password']) : $request->only(['name', 'password']);
 
         if(! Auth::attempt( $credenciales ) )
             return redirect()->route('autenticar.login')->withInput()->withErrors(['failed']);
