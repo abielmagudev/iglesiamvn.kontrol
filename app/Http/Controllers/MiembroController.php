@@ -71,14 +71,16 @@ class MiembroController extends Controller
             return back()->with('danger', 'Error al actualizar miembro, inténtalo nuevamente...');
 
         $message = "Miembro <b>{$miembro->nombre_completo}</b> ha sido actualizado";
-
-        if( $convivientes = Miembro::whereConviveDomicilio($miembro->id)->get() )
+        
+        $convivientes = Miembro::whereConviveDomicilio($miembro->id)->get();
+        
+        if( $convivientes->count() )
         {
             Miembro::whereIn('id', $convivientes->pluck('id'))->update(
                 $request->only(['direccion', 'localidad'])
             );
 
-            $message .= ", asi como el domicilio de los miembris que conviven";
+            $message .= ", asi como el domicilio de los miembros que conviven";
         }
 
         $regresar = $request->get('regresar', route('miembros.show', $miembro));
