@@ -18,8 +18,8 @@
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Fecha</th>
-                <th>Hora</th>
                 <th>Día</th>
+                <th>Hora</th>
                 <th></th>
             </tr>
         </zx-slot>
@@ -28,8 +28,8 @@
             <td>{{ $evento->nombre }}</td>
             <td>{!! $evento->tieneDescripcion() ? convertirLinks($evento->descripcion) : '' !!}</td>
             <td class="has-text-nowrap">{{ $evento->fecha_humana }}</td>
-            <td class="has-text-nowrap">{{ $evento->hora_humana }}</td>
             <td class="has-text-nowrap">{{ ucfirst($evento->nombre_dia_semana) }}</td>
+            <td class="has-text-nowrap">{{ $evento->hora_humana }}</td>
             <td class="has-text-right">
                 <a href="{{ route('eventos.edit', $evento) }}" class="button is-warning is-outlined is-small has-text-dark" target="_self">Editar</a>
             </td>
