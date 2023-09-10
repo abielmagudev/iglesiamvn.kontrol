@@ -15,6 +15,7 @@ class ApiEventoController extends Controller
         $eventos = Evento::whereYear('fecha', $request->anio)
                         ->whereMonth('fecha', $request->mes)
                         ->orderBy('fecha', 'asc')
+                        ->orderBy('hora', 'asc')
                         ->get();
 
         return new EventoCollectionResource($eventos);
