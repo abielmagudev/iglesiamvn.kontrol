@@ -51,6 +51,24 @@ if(! function_exists('nombreMesNumero') )
     }
 }
 
+if(! function_exists('nombreDiaSemana') )
+{
+    function nombreDiaSemana(int $index)
+    {
+        static $nombres_meses = [
+            0 => 'domingo',
+            1 => 'lunes',
+            2 => 'martes',
+            3 => 'miercoles',
+            4 => 'jueves',
+            5 => 'viernes',
+            6 => 'sábado',
+        ];
+
+        return isset( $nombres_meses[ $index ] ) ? $nombres_meses[ $index ] : false;
+    }
+}
+
 if(! function_exists('convertirLinks') )
 {
     function convertirLinks(string $texto)
