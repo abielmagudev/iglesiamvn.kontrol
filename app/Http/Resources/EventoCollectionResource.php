@@ -29,4 +29,11 @@ class EventoCollectionResource extends ResourceCollection
             ];
         });
     }
+
+    public function with($request)
+    {
+        return [
+            'status' => 200
+        ];
+    }
 }
