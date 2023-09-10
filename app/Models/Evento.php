@@ -62,6 +62,11 @@ class Evento extends Model
         return $this->isReal() ? $this->hora->format('H:i') : null;
     }
 
+    public function getNombreDiaSemanaAttribute()
+    {
+        return $this->isReal() ? nombreDiaSemana($this->fecha->dayOfWeek) : null ;
+    }
+
 
     // Validations
 
