@@ -12,9 +12,12 @@ class ApiEventoController extends Controller
 {
     public function index(ApiEventoRequest $request)
     {
-        $eventos = Evento::whereYear('fecha', $request->anio)
-                        ->whereMonth('fecha', $request->mes)
-                        ->orderBy('fecha', 'asc')
+        $query = Evento::whereYear('fecha', $request->anio);
+
+        if(! is_null($request->mes) )
+            $query->whereMonth('fecha', $request->mes);
+        
+        $eventos = $query->orderBy('fecha', 'asc')
                         ->orderBy('hora', 'asc')
                         ->get();
 
