@@ -1,18 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\ApiEventoRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\ApiEventoRequest;
 use App\Http\Resources\EventoCollectionResource;
 use App\Models\Evento;
 use Illuminate\Http\Request;
 
 class ApiEventoController extends Controller
 {
-    public function index(ApiEventoRequest $request, string $anio, string $mes)
+    public function index(ApiEventoRequest $request)
     {
-        $eventos = Evento::whereYear('fecha', $anio)
-                        ->whereMonth('fecha', $mes)
+        $eventos = Evento::whereYear('fecha', $request->anio)
+                        ->whereMonth('fecha', $request->mes)
                         ->orderBy('fecha', 'asc')
                         ->get();
 

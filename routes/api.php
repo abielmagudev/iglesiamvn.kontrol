@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ApiEventoController;
+use App\Http\Controllers\Api\ApiEventoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +23,4 @@ use Illuminate\Support\Facades\Route;
 //     Route::get('eventos/{numero_mes?}', [ApiEventoController::class, 'index'])->name('api.eventos.index');
 // });
 
-Route::get('eventos/{anio}/{mes}', [ApiEventoController::class, 'index'])->name('api.eventos.index');
+Route::get('eventos/{anio}/{mes?}', [ApiEventoController::class, 'index'])->name('api.eventos.index');
