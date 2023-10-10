@@ -11,7 +11,7 @@
 
             <div class="box has-text-centered pb-5" style="min-width: 400px">
                 <div class="title">
-                    <img src="{{ asset('images/mvn-favicon-b.png') }}" width="64" height="64" />
+                    <img src="{{ asset('images/mvn-favicon-b.png') }}" width="92" height="92" />
                 </div>
     
                 <form action="{{ route('autenticar.attempt') }}" method="post" autocomplete="off">
