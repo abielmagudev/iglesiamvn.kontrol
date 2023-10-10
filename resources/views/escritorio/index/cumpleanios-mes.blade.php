@@ -7,10 +7,8 @@ $index = 1;
 ?>
 
 <div class="box">
-    <div class="is-pulled-right">
-        <div class="subtitle">{{ now()->toFormattedDateString() }}</div>
-    </div>
-    <div class="title">Hoy {{ $cumpleanieros->count() }} cumpleañero(s)</div>
+    <div class="title">{{ $cumpleanieros->count() }} cumpleañero(s)</div>
+    <div class="subtitle">Hoy {{ now()->toFormattedDateString() }}</div>
     
     @if( $cumpleanieros->count() )
     <x-table class='is-fullwidth is-hoverable'>
