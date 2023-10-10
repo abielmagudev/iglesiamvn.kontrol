@@ -1,6 +1,6 @@
 @extends('aplicacion')
 @section('contenido')
-<section class="hero is-primary is-bold is-fullheight">
+<section class="hero is-dark is-bold is-fullheight">
     <div class="hero-body is-justify-content-center">
         <div id="wrapper-centered">
             @if( $errors->any() )
@@ -11,8 +11,7 @@
 
             <div class="box has-text-centered pb-5" style="min-width: 400px">
                 <div class="title">
-                    <img src="{{ asset('images/mvn-favicon-b.png') }}" width="36" height="36" />
-                    <span class="has-text-dark ml-1">KONTROL</span>
+                    <img src="{{ asset('images/mvn-favicon-b.png') }}" width="64" height="64" />
                 </div>
     
                 <form action="{{ route('autenticar.attempt') }}" method="post" autocomplete="off">
